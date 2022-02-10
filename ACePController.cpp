@@ -110,7 +110,10 @@ void ACePController::initialize()
     waitShort();
     digitalWrite(ACEP_RESET_PIN, HIGH);
     waitLong();
-    waitACePBusyHigh();
+    waitACePBusyHigh(100); // time limit = 5 secs
+    if (digitalRead(ACEP_BUSY_PIN) != HIGH) {
+        return;
+    }
 
     SPI.begin();
     applyACePSequence(initialzeSequence1);
@@ -432,9 +435,10 @@ void ACePController::waitACePBusyLow(void)
     }
 }
 
-void ACePController::waitACePBusyHigh(void)
+void ACePController::waitACePBusyHigh(uint16_t limit)
 {
-    while (digitalRead(ACEP_BUSY_PIN) != HIGH) {
+    uint16_t counter = 0;
+    while (digitalRead(ACEP_BUSY_PIN) != HIGH && (limit == 0 || counter++ < limit)) {
         waitShort();
     }
 }

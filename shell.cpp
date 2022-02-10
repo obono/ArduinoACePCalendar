@@ -28,7 +28,7 @@
 #include "ACePController.h"
 #include "testpatterndata.h"
 
-#define VERSION "0.1.0"
+#define VERSION "0.1.1"
 
 #define INPUT_BUF_SIZE  32
 #define COMMAND_LEN_MAX 8
@@ -142,9 +142,9 @@ void handleSerialInput(char data)
                 Serial.println(F("Invalid command."));
             }
             inputPos = 0;
-            if (isShellEnabled) {
-                printShellPrompt();
-            }
+        }
+        if (isShellEnabled) {
+            printShellPrompt();
         }
     }
 }

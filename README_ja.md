@@ -87,6 +87,8 @@ OK
 
 [![クリックして拡大](doc/schematic_thumbnail.png)](doc/schematic.png)
 
+![回路例](doc/circuit_sample.jpg)
+
 ## ソフトウェア情報 ![MIT Licensed](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ### ビルド環境

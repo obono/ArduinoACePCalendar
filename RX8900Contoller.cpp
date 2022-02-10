@@ -59,8 +59,9 @@ void RX8900Controller::setup(void)
     uint8_t flag = readByte(REG_FLAG);
     uint8_t data[] = { 0b00101010, 0b00000000, 0b11001001 };
     writeBytes(REG_EXTENTION, data, 3);
+    writeByte(REG_BACKUP, 0b00000000);
     isInitialized = true;
-    if ((flag & 0b00000011) || readByte(REG_ALARM_HOUR) > 0x24) {
+    if (flag & 0b00000010) {
         restoreDefault();
     }
 }

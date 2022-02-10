@@ -75,7 +75,7 @@ private:
     void sendACePData(const uint8_t *pData, uint16_t len);
     void sendACePData(const uint8_t data);
     void waitACePBusyLow(void);
-    void waitACePBusyHigh(void);
+    void waitACePBusyHigh(uint16_t limit = 0);
     void beginSDTransaction(void);
     void endSDTransaction(void);
 

@@ -87,6 +87,8 @@ The order of images to display depends on the algorythm of file scanning in Ardu
 
 [![Click to expand](doc/schematic_thumbnail.png)](doc/schematic.png)
 
+![Sample](doc/circuit_sample.jpg)
+
 ## Software ![MIT Licensed](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ### Build enviroment
