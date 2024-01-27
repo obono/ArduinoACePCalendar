@@ -80,7 +80,7 @@ The order of images to display depends on the algorythm of file scanning in Ardu
 * [MicroSD breakout board](https://www.sparkfun.com/products/13743)
 * [Battery charger controller module](https://www.aitendo.com/product/19267)
 * Li-Po battery and CR2032
-* A 100&ohm; register, a diode, a tactile switch and a slide switch (2 circuits)
+* A 100&ohm; resistor, a diode, a tactile switch and a slide switch (2 circuits)
 * Connectors, wires, etc...
 
 ### Schematic
