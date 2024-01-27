@@ -79,8 +79,8 @@ OK
 * [RTC モジュール](https://akizukidenshi.com/catalog/g/gK-13009/)
 * [MicroSD ブレイクアウトボード](https://www.sparkfun.com/products/13743)
 * [充電昇圧一体化モジュール](https://www.aitendo.com/product/19267)
-* Li-Po 充電池と CR2032 ボタン電池
-* 抵抗 100&ohm;、ダイオード、タクトスイッチ、スライドスイッチ(2回路)
+* Li-Po 充電池
+* 抵抗 180&ohm;、電解コンデンサ 1F、タクトスイッチ、スライドスイッチ(2回路)
 * コネクタ、線材、など
 
 ### 回路図

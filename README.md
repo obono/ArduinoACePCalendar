@@ -79,8 +79,8 @@ The order of images to display depends on the algorythm of file scanning in Ardu
 * [RTC module](https://akizukidenshi.com/catalog/g/gK-13009/)
 * [MicroSD breakout board](https://www.sparkfun.com/products/13743)
 * [Battery charger controller module](https://www.aitendo.com/product/19267)
-* Li-Po battery and CR2032
-* A 100&ohm; resistor, a diode, a tactile switch and a slide switch (2 circuits)
+* A Li-Po battery
+* A 180&ohm; resistor, a 1F electrolytic capacitor, a tactile switch and a slide switch (2 circuits)
 * Connectors, wires, etc...
 
 ### Schematic
