@@ -91,7 +91,7 @@ The order of images to display depends on the algorythm of file scanning in Ardu
 
 ## Software ![MIT Licensed](https://img.shields.io/badge/license-MIT-blue.svg)
 
-### Build enviroment
+### Build environment
 
 You can build the source code by Arduino IDE with following configuration.
 
