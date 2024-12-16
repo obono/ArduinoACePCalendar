@@ -28,7 +28,7 @@
 #include "ACePController.h"
 #include "testpatterndata.h"
 
-#define VERSION "0.1.1"
+#define VERSION "0.2.0"
 
 #define INPUT_BUF_SIZE  32
 #define COMMAND_LEN_MAX 8

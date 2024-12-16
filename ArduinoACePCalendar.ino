@@ -47,6 +47,7 @@ void setup(void)
     pinMode(ALARM_WAKE_PIN, INPUT_PULLUP);
     pinMode(SHELL_ENABLE_PIN, INPUT_PULLUP);
     isShellEnabled = digitalRead(SHELL_ENABLE_PIN) == HIGH;
+    bool isAlarmWake = digitalRead(ALARM_WAKE_PIN) == LOW;
     if (isShellEnabled) {
         Serial.begin(SERIAL_BAUD_RATE);
         printShellMessage();
@@ -57,27 +58,16 @@ void setup(void)
     if (isShellEnabled) {
         printShellPrompt();
     }
+    if (isAlarmWake) {
+        doToday();
+    }
 }
 
 void loop(void)
 {
     if (digitalRead(ALARM_WAKE_PIN) == LOW) {
-        rtc.suspendAlarm();
-        uint16_t year;
-        uint8_t month, day;
-        if (rtc.getDate(year, month, day)) {
-            acep.setDate(year, month, day);
-        }
-        acep.clearDisplay();
-        uint8_t index = rtc.getImageIndex();
-        char path[PATH_LEN_MAX];
-        if (acep.specifyImagePathOfSD(index, path)) {
-            index = 0;
-        }
-        rtc.setImageIndex(index + 1);
-        acep.displayACePDataFromSD(path, true);
+        doToday();
     }
-
     if (isShellEnabled) {
         int serialData;
         while ((serialData = Serial.read()) != -1) {
@@ -89,6 +79,24 @@ void loop(void)
         sleep();
         acep.initialize();
     }
+}
+
+static void doToday(void)
+{
+    rtc.suspendAlarm();
+    uint16_t year;
+    uint8_t month, day;
+    if (rtc.getDate(year, month, day)) {
+        acep.setDate(year, month, day);
+    }
+    acep.clearDisplay();
+    uint8_t index = rtc.getImageIndex();
+    char path[PATH_LEN_MAX];
+    if (acep.specifyImagePathOfSD(index, path)) {
+        index = 0;
+    }
+    rtc.setImageIndex(index + 1);
+    acep.displayACePDataFromSD(path, true);
 }
 
 static void wakeUp(void)
